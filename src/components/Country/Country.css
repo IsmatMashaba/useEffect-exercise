@@ -1,0 +1,20 @@
+img {
+    height: 80px;
+    width: 80px;
+    margin-top: 32px;
+}
+.country-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px;
+
+}
+.country {
+    border: 1px solid black;
+    height: 400px;
+    width: 350px;
+    margin-left:100px;
+    padding-left: 50px;
+    margin-bottom: 100px;
+
+}

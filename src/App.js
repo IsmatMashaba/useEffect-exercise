@@ -25,7 +25,7 @@ fetch(url)
     .get(url)
     .then((res)=>console.log(res.data))
     .catch((err)=>console.log(err))*/
-  async function fetchData (){
+  function fetchData (){
     fetch(url)
         .then((res)=>(res.json()))
         .then((data)=>setData(data))
@@ -36,22 +36,16 @@ useEffect(()=>{
 
 },[])
 
-/*console.log(data);*/
+console.log(data);
   return (
       <div className="App">
-<h3>Country List</h3>
-    {data.map((item)=>{
-      console.log(item);
-     return (
-         <Country
-             name={item.name.common}
-             region={item.continents}
-             /*map={maps.googleMaps}*/
-             flags={item.flags.png}
-             borders={item.borders}
-         />
-     )
-    })}
+      <h3>Country List</h3>
+        <div className='country-list'>
+        {/*using slice method to get only 6 items from data array*/}
+        {data.slice(0,6).map((item)=>{
+          return <Country prop={item} />
+        })}
+        </div>
 
   </div>)
 }
